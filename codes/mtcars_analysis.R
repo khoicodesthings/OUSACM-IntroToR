@@ -36,9 +36,29 @@ boxplot(mpg ~ cyl, data = mtcars,
 model <- lm(mpg ~ hp, data = mtcars)
 summary(model)
 
+# Scatter plot of mpg vs hp
+plot(mtcars$hp, mtcars$mpg, 
+     xlab = "Horsepower", 
+     ylab = "Miles per Gallon", 
+     main = "MPG vs Horsepower with Regression Line",
+     pch = 19, col = "blue")
+
+# Add the regression line
+abline(model, col = "red")
+
 # Multiple linear regression: predicting mpg based on multiple variables
 multi_model <- lm(mpg ~ hp + wt + qsec, data = mtcars)
 summary(multi_model)
+
+# Scatter plot of mpg vs hp
+plot(mtcars$hp, mtcars$mpg, 
+     xlab = "Horsepower", 
+     ylab = "Miles per Gallon", 
+     main = "MPG vs Horsepower with Regression Line",
+     pch = 19, col = "blue")
+
+# Add the regression line
+abline(multi_model, col = "red")
 
 # Filter cars with more than 6 cylinders
 subset_mtcars <- subset(mtcars, cyl > 6)
